@@ -75,8 +75,10 @@
     <None Include="ReadMe.txt" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="CumulativeCount.h" />
     <ClInclude Include="Graph.h" />
     <ClInclude Include="IndexedBST.h" />
+    <ClInclude Include="Interval.h" />
     <ClInclude Include="KdTree.h" />
     <ClInclude Include="List.h" />
     <ClInclude Include="LongestDistanceOrderedPair.h" />
