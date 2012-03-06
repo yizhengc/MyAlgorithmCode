@@ -60,6 +60,12 @@
     <ClInclude Include="LongestDistanceOrderedPair.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="CumulativeCount.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Interval.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="stdafx.cpp">

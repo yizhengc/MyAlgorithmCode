@@ -7,6 +7,8 @@
 #include "Tree.h";
 #include "List.h";
 #include "LongestDistanceOrderedPair.h";
+#include "CumulativeCount.h";
+#include "Interval.h"
 //using namespace Util;
 using namespace std;
 
@@ -31,6 +33,28 @@ int _tmain(int argc, _TCHAR* argv[])
 
 	int distance = FindLongestDistanceOrderedPair(elements, 10, left, right);
 	*/
+
+	int ranges[7][2] = { {1, 6}, {3, 9}, {4, 6}, {5, 9}, {9, 13}, {11, 19}, {12, 18}};
+
+	Interval* intervals = new Interval[7];
+
+	for(int i = 0; i < 7; i++)
+	{
+		intervals[i].LB = ranges[i][0];
+		intervals[i].RB = ranges[i][1];
+	}
+
+	int idx1, idx2;
+	int overlap = LargestOverlap(intervals, 7, idx1, idx2);
+
+	int countArray[8] = { 3, 6, 4, 0, 1, 0, 1, 0};
+
+	int* origArray = RecoverArrayFromCountArray(countArray, 8);
+
+	for (int i = 0; i < 8; i++)
+	{
+		cout << origArray[i] << " ";
+	}
 
 	int elements[8] = {1, 3, 5, 6, 9, 12, 17, 20 };
 	int elements2[8] = {2, 3, 4, 4, 11, 14, 17, 19 };
