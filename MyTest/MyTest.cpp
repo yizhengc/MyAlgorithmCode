@@ -8,7 +8,9 @@
 #include "List.h";
 #include "LongestDistanceOrderedPair.h";
 #include "CumulativeCount.h";
-#include "Interval.h"
+#include "Interval.h";
+#include "PyramidCup.h";
+#include "MergeBST.h";
 //using namespace Util;
 using namespace std;
 
@@ -16,50 +18,11 @@ using namespace std;
 
 int _tmain(int argc, _TCHAR* argv[])
 {
-	/*
-	PyramidCup* cups = PyramidCups::GetPyramidCupWater(100, 5, 36);
+	TestMergeTwoIntervalLists();
 
-	for(int i = 0; i < 36; i++)
-	{
-		cout << (cups + i)->Residual() << " ";
-	}
+	TestMergeInterval();
 
-	cout << endl;
-	
-
-	int elements[10] = {12, 6, 1, 8, 9, 3, 2, 4, 10, 11 };
-
-	int left, right;
-
-	int distance = FindLongestDistanceOrderedPair(elements, 10, left, right);
-	*/
-
-	int ranges[7][2] = { {1, 6}, {3, 9}, {4, 6}, {5, 9}, {9, 13}, {11, 19}, {12, 18}};
-
-	Interval* intervals = new Interval[7];
-
-	for(int i = 0; i < 7; i++)
-	{
-		intervals[i].LB = ranges[i][0];
-		intervals[i].RB = ranges[i][1];
-	}
-
-	int idx1, idx2;
-	int overlap = LargestOverlap(intervals, 7, idx1, idx2);
-
-	int countArray[8] = { 3, 6, 4, 0, 1, 0, 1, 0};
-
-	int* origArray = RecoverArrayFromCountArray(countArray, 8);
-
-	for (int i = 0; i < 8; i++)
-	{
-		cout << origArray[i] << " ";
-	}
-
-	int elements[8] = {1, 3, 5, 6, 9, 12, 17, 20 };
-	int elements2[8] = {2, 3, 4, 4, 11, 14, 17, 19 };
-
-	int median = FindMedian(elements, elements2, 8);
+	TestMergeBST();
 
 	int input[10] = {1, 1, 2, 4, 4, 5, 6, 7, 7, 7};
 
@@ -104,7 +67,7 @@ int _tmain(int argc, _TCHAR* argv[])
 	PrintMatrix(a, 5, 4);
 
 	*/
-
+	/*
 	BinaryTree* bst = new BinaryTree();
 	
 	bst->BuildTree(elements, 10);
@@ -125,13 +88,13 @@ int _tmain(int argc, _TCHAR* argv[])
 
 	bst->PrintTreeByLevel();
 
-	/*
+	
 	bst->PrintBST(InOrder);
 	cout << endl;
 
 	bst->InOrderLoopTraverse();
 	cout << endl;
-	*/
+	
 	bst->PrintBST(PreOrder);
 	cout << endl;
 
@@ -154,6 +117,7 @@ int _tmain(int argc, _TCHAR* argv[])
 	char* ret = balanceParanthesis("(ab(ab)n2)x)", 12);
 	ret =  balanceParanthesis("))", 2);
 	return 0;
+	*/
 }
 
 

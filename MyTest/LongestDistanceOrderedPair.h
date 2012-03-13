@@ -35,28 +35,11 @@ int FindLongestDistanceOrderedPair(int* elements, int length, int& left, int& ri
 	return distance;
 }
 
-int FindMedian(int* list1, int* list2, int length)
+void TestFindLongestDistanceOrderedPair()
 {
-	int medianOffset = (length - 1) / 2;
+	int elements[10] = {12, 6, 1, 8, 9, 3, 2, 4, 10, 11 };
 
-	if (medianOffset == 0)
-	{
-		if (length == 1)
-			return min(list1[0], list2[0]);
-		else if (length == 2)
-		{
-			return max(min(list1[0], list1[1]), min(list2[0], list2[1]));
-		}
-	}
-	
-	if (list1[medianOffset] == list2[medianOffset])
-		return list1[medianOffset];
-	else if (list1[medianOffset] < list2[medianOffset])
-	{
-		return FindMedian(list1 + medianOffset, list2, length - medianOffset);
-	}
-	else if (list1[medianOffset] > list2[medianOffset])
-	{
-		return FindMedian(list2 + medianOffset, list1, length - medianOffset);
-	}
+	int left, right;
+
+	int distance = FindLongestDistanceOrderedPair(elements, 10, left, right);
 }

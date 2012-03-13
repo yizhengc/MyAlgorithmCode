@@ -81,3 +81,15 @@ int* RecoverArrayFromCountArray(int* countarray, int length)
 
 	return origArray;
 }
+
+void TestCumulativeCount()
+{
+	int countArray[8] = { 3, 6, 4, 0, 1, 0, 1, 0};
+
+	int* origArray = RecoverArrayFromCountArray(countArray, 8);
+
+	for (int i = 0; i < 8; i++)
+	{
+		cout << origArray[i] << " ";
+	}
+}

@@ -82,8 +82,11 @@
     <ClInclude Include="KdTree.h" />
     <ClInclude Include="List.h" />
     <ClInclude Include="LongestDistanceOrderedPair.h" />
+    <ClInclude Include="MedianOfSortedArray.h" />
+    <ClInclude Include="MergeBST.h" />
     <ClInclude Include="NumberTheory.h" />
     <ClInclude Include="Puzzles.h" />
+    <ClInclude Include="PyramidCup.h" />
     <ClInclude Include="Queue.h" />
     <ClInclude Include="Range.h" />
     <ClInclude Include="Sort.h" />

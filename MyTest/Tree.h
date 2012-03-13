@@ -40,6 +40,11 @@ public:
 		_pRoot = NULL;
 	}
 
+	TreeNode* GetRoot()
+	{
+		return _pRoot;
+	}
+	
 	void BuildTree(int* values, int aryLength)
 	{
 		for(int i = 0; i < aryLength; i++)
