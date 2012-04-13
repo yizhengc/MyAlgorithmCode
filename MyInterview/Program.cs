@@ -27,7 +27,15 @@ namespace MyInterview
 
             // MergeArrays.UnitTest();
 
-            MaxSumSubarray.UnitTest();
+            // MaxSumSubarray.UnitTest();
+
+            // BST2DLLConversion.UnitTest();
+
+            // FindLargestAreaRectangleUnderHistogram.UnitTest();
+
+            // StringMatching.UnitTest();
+
+            RangeBinarySearchTree.UnitTest();
         }
     }
 }

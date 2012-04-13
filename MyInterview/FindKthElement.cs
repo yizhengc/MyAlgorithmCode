@@ -7,7 +7,7 @@ namespace MyInterview
 {
     class OrderStatistics
     {
-        static int FindKthElement(TreeNode node, int count, int k, ref int val)
+        static int FindKthElement(TreeNode<int> node, int count, int k, ref int val)
         {
             if (node.Left != null)
                 count = FindKthElement(node.Left, count, k, ref val);
@@ -25,7 +25,7 @@ namespace MyInterview
 
         public static void UnitTest()
         {
-            TreeNode root = TreeUtil.CreateTreeFromSortedArray(new int[] { 1, 2, 3, 4, 5, 6 }, 0, 5);
+            TreeNode<int> root = TreeUtil.CreateTreeFromSortedArray(new int[] { 1, 2, 3, 4, 5, 6 }, 0, 5);
             int val = -1;
             FindKthElement(root, 0, 3, ref val);
 

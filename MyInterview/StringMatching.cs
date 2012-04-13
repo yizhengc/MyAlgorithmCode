@@ -64,9 +64,9 @@ namespace MyInterview
 
         public static void UnitTest()
         {
-            string pattern = "ababcdbca";
+            string pattern = "ababcdaba";
 
-            string haystack = "acanaiababcdbcababcdbca";
+            string haystack = "acanaiababcdababcdbca";
 
             List<int> result = FindNeedleInHaystack(pattern, haystack);
 

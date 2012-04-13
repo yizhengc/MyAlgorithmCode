@@ -5,14 +5,14 @@ using System.Text;
 
 namespace MyInterview
 {
-    public class TreeNode
+    public class TreeNode<T>
     {
-        public int Value;
+        public T Value;
         public bool Visited;
-        public TreeNode Left;
-        public TreeNode Right;
+        public TreeNode<T> Left;
+        public TreeNode<T> Right;
 
-        public TreeNode(int val)
+        public TreeNode(T val)
         {
             Value = val;
             Visited = false;
@@ -22,14 +22,14 @@ namespace MyInterview
 
     public class TreeUtil
     {
-        public static TreeNode CreateTreeFromSortedArray(int[] array, int low, int high)
+        public static TreeNode<T> CreateTreeFromSortedArray<T>(T[] array, int low, int high)
         {
             if (low > high)
                 return null;
 
             int mid = (low + high) / 2;
 
-            TreeNode root = new TreeNode(array[mid]);
+            TreeNode<T> root = new TreeNode<T>(array[mid]);
 
             root.Left = CreateTreeFromSortedArray(array, low, mid - 1);
             root.Right = CreateTreeFromSortedArray(array, mid + 1, high);

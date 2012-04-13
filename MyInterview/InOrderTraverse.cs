@@ -7,11 +7,11 @@ namespace MyInterview
 {
     class InOrderTraverse
     {
-        static void InOrderTraverseLoop(TreeNode root)
+        static void InOrderTraverseLoop(TreeNode<int> root)
         {
-            Stack<TreeNode> stack = new Stack<TreeNode>();
+            Stack<TreeNode<int>> stack = new Stack<TreeNode<int>>();
 
-            TreeNode cur = root;
+            TreeNode<int> cur = root;
 
             while (cur != null)
             {
@@ -43,7 +43,7 @@ namespace MyInterview
 
         public static void UnitTest()
         {
-            TreeNode root = TreeUtil.CreateTreeFromSortedArray(new int[] { 1, 2, 3, 4, 5, 6 }, 0, 5);
+            TreeNode<int> root = TreeUtil.CreateTreeFromSortedArray(new int[] { 1, 2, 3, 4, 5, 6 }, 0, 5);
 
             InOrderTraverseLoop(root);
         }
