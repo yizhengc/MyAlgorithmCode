@@ -49,9 +49,11 @@
     <Compile Include="FindKthElement.cs" />
     <Compile Include="FindLargestAreaRectangleUnderHistogram.cs" />
     <Compile Include="FindMaxSumNonConsecutiveSet.cs" />
+    <Compile Include="Graph.cs" />
     <Compile Include="InOrderTraverse.cs" />
     <Compile Include="InPlaceSortLinkedList.cs" />
     <Compile Include="LinkedListUtil.cs" />
+    <Compile Include="LongestDistanceOrderedPair.cs" />
     <Compile Include="LRUCache.cs" />
     <Compile Include="MaxSumSubarray.cs" />
     <Compile Include="MergeArrays.cs" />
@@ -64,6 +66,7 @@
     <Compile Include="StringMatching.cs" />
     <Compile Include="StringReduction.cs" />
     <Compile Include="ThreeWaySum.cs" />
+    <Compile Include="TopologicalSort.cs" />
     <Compile Include="TreeUtil.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

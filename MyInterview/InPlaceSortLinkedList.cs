@@ -11,14 +11,14 @@ namespace MyInterview
     /// </summary>
     class InPlaceSortLinkedList
     {
-        static Node Sort(Node head)
+        static Node<int> Sort(Node<int> head)
         {
             if (head == null || head.Next == null)
                 return head;
 
-            Node head2 = null;
-            Node cur = head.Next;
-            Node tail = head;
+            Node<int> head2 = null;
+            Node<int> cur = head.Next;
+            Node<int> tail = head;
 
             while (cur != null)
             {
@@ -32,7 +32,7 @@ namespace MyInterview
                 {
                     tail.Next = cur.Next;
                     tail = tail.Next;
-                    Node tmp = cur.Next.Next;
+                    Node<int> tmp = cur.Next.Next;
                     cur.Next = head2;
                     head2 = cur;
                     cur = tmp;
@@ -44,15 +44,15 @@ namespace MyInterview
             return MergeSortedLinkedList(head, head2);
         }
 
-        static Node MergeSortedLinkedList(Node head, Node head2)
+        static Node<int> MergeSortedLinkedList(Node<int> head, Node<int> head2)
         {
-            Node cur2 = head2;
-            Node cur = head;
-            Node tail = null;
+            Node<int> cur2 = head2;
+            Node<int> cur = head;
+            Node<int> tail = null;
 
             while (cur != null && cur2 != null)
             {
-                Node selected = null;
+                Node<int> selected = null;
                 if (cur.Value < cur2.Value)
                 {
                     selected = cur;
@@ -89,7 +89,7 @@ namespace MyInterview
 
         public static void UnitTest()
         {
-            Node node = LinkedListUtil.CreateLinkListFromArray(new int[]{1, 9, 3, 8, 5, 7, 7, 6});
+            Node<int> node = LinkedListUtil.CreateLinkListFromArray(new int[]{1, 9, 3, 8, 5, 7, 7, 6});
             node = Sort(node);
 
             LinkedListUtil.PrintLinkedList(node);

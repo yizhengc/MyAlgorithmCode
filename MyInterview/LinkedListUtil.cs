@@ -5,22 +5,31 @@ using System.Text;
 
 namespace MyInterview
 {
-    public class Node
+    public class Node<T>
     {
-        public int Value;
-        public Node Next;
+        public T Value;
+        public Node<T> Next;
+
+        public Node()
+        {
+        }
+
+        public Node(T v)
+        {
+            Value = v;
+        }
     }
 
     public class LinkedListUtil
     {
-        public static Node CreateLinkListFromArray(int[] values)
+        public static Node<int> CreateLinkListFromArray(int[] values)
         {
-            Node head = new Node();
-            Node current = head;
+            Node<int> head = new Node<int>();
+            Node<int> current = head;
 
             for (int i = 0; i < values.Length; i++)
             {
-                current.Next = new Node();
+                current.Next = new Node<int>();
                 current.Next.Value = values[i];
                 current = current.Next;
             }
@@ -29,14 +38,14 @@ namespace MyInterview
             return head.Next;
         }
 
-        public static Node RevertLinkList(Node head)
+        public static Node<int> RevertLinkList(Node<int> head)
         {
             if (head == null)
                 return null;
 
-            Node prev = null;
-            Node current = head;
-            Node next = head.Next;
+            Node<int> prev = null;
+            Node<int> current = head;
+            Node<int> next = head.Next;
 
             while (next != null)
             {
@@ -51,7 +60,7 @@ namespace MyInterview
             return current;
         }
 
-        public static Node Delete(Node head, int value)
+        public static Node<int> Delete(Node<int> head, int value)
         {
             if (head == null)
                 return null;
@@ -59,7 +68,7 @@ namespace MyInterview
             if (head.Value == value)
                 return head.Next;
 
-            Node cur = head;
+            Node<int> cur = head;
 
             while (cur != null && cur.Next != null && cur.Next.Value != value)
             {
@@ -72,7 +81,7 @@ namespace MyInterview
             return head;
         }
 
-        public Node PushFront(Node head, Node node)
+        public Node<int> PushFront(Node<int> head, Node<int> node)
         {
             node.Next = head;
             head = node;
@@ -80,18 +89,18 @@ namespace MyInterview
             return head;
         }
 
-        public void PushEnd(Node tail, Node node)
+        public void PushEnd(Node<int> tail, Node<int> node)
         {
             tail.Next = node;
             tail = tail.Next;
             tail.Next = null;
         }
 
-        public static void PrintLinkedList(Node head)
+        public static void PrintLinkedList<T>(Node<T> head)
         {
             while (head != null)
             {
-                Console.Write(head.Value);
+                Console.Write(head.Value.ToString());
                 Console.Write(" ");
                 head = head.Next;
             }
@@ -103,13 +112,13 @@ namespace MyInterview
         {
             int[] array = new int[] { 1, 2, 3, 4, 5 };
 
-            Node head = LinkedListUtil.CreateLinkListFromArray(array);
+            Node<int> head = LinkedListUtil.CreateLinkListFromArray(array);
 
             head = LinkedListUtil.RevertLinkList(head);
 
             PrintLinkedList(head);
 
-            Node newHead = Delete(head, 3);
+            Node<int> newHead = Delete(head, 3);
 
             PrintLinkedList(newHead);
         }
