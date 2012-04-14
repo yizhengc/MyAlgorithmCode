@@ -50,6 +50,7 @@
     <Compile Include="FindLargestAreaRectangleUnderHistogram.cs" />
     <Compile Include="FindMaxSumNonConsecutiveSet.cs" />
     <Compile Include="InOrderTraverse.cs" />
+    <Compile Include="InPlaceSortLinkedList.cs" />
     <Compile Include="LinkedListUtil.cs" />
     <Compile Include="LRUCache.cs" />
     <Compile Include="MaxSumSubarray.cs" />

@@ -51,7 +51,43 @@ namespace MyInterview
             return current;
         }
 
-        static void PrintLinkedList(Node head)
+        public static Node Delete(Node head, int value)
+        {
+            if (head == null)
+                return null;
+
+            if (head.Value == value)
+                return head.Next;
+
+            Node cur = head;
+
+            while (cur != null && cur.Next != null && cur.Next.Value != value)
+            {
+                cur = cur.Next;
+            }
+
+            if (cur != null && cur.Next != null && cur.Next.Value == value)
+                cur.Next = cur.Next.Next;
+
+            return head;
+        }
+
+        public Node PushFront(Node head, Node node)
+        {
+            node.Next = head;
+            head = node;
+
+            return head;
+        }
+
+        public void PushEnd(Node tail, Node node)
+        {
+            tail.Next = node;
+            tail = tail.Next;
+            tail.Next = null;
+        }
+
+        public static void PrintLinkedList(Node head)
         {
             while (head != null)
             {
@@ -72,6 +108,10 @@ namespace MyInterview
             head = LinkedListUtil.RevertLinkList(head);
 
             PrintLinkedList(head);
+
+            Node newHead = Delete(head, 3);
+
+            PrintLinkedList(newHead);
         }
     }
 }

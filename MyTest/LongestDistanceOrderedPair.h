@@ -2,6 +2,12 @@
 
 using namespace std;
 
+// Key: Use an auxiliary array to remember the largest element to the right of the current element. 
+// If original is 12, 6, 1, 8, 9, 3, 2, 4, 10, 1
+// aux will be 12, 10, 10, 10, 10, 10, 10, 10, 10, 1
+// The aux just provides the information saying there is a bigger value after the current location which is say 10. 
+// When found longest order pair starting from the current location i, there won't be pair in between that's longer.
+// So if hitting a smaller value than current location in the aux array, then start search again at the location at the smaller value. 
 int FindLongestDistanceOrderedPair(int* elements, int length, int& left, int& right)
 {
 	int* aux = new int[length];

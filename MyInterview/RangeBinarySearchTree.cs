@@ -19,6 +19,31 @@ namespace MyInterview
 
     class RangeBinarySearchTree
     {
+        public static TreeNode<Range> Find(TreeNode<Range> root, Range range)
+        {
+            while (root != null)
+            {
+                if (root.Value.Left > range.Right)
+                    root = root.Left;
+                else if (root.Value.Right < range.Left)
+                    root = root.Right;
+                else
+                    break;
+            }
+
+            return root != null && root.Value == range ? root : null;
+        }
+
+        public static void Delete(TreeNode<Range> root, Range range)
+        {
+            TreeNode<Range> target = Find(root, range);
+
+            if (target != null)
+            {
+
+            }
+        }
+
         public static TreeNode<Range> InsertRangeNode(TreeNode<Range> root, Range range)
         {
             if (root == null)
