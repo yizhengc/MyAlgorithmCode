@@ -38,5 +38,10 @@ namespace MyInterview
         {
             return array.Count == 0;
         }
+
+        public int Size()
+        {
+            return array.Count;
+        }
     }
 }

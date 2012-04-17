@@ -43,7 +43,13 @@ namespace MyInterview
 
             // TopologicalSort.UnitTest();
 
-            LongestDistanceOrderedPair.UnitTest();
+            // LongestDistanceOrderedPair.UnitTest();
+
+            // Trie.UnitTest();
+
+            // ArraySubsets.UnitTes();
+
+            Expression.UnitTest();
         }
     }
 }

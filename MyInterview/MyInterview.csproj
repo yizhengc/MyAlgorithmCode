@@ -43,13 +43,16 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ArraySubsets.cs" />
     <Compile Include="BST2DLLConversion.cs" />
     <Compile Include="Dictionary.cs" />
+    <Compile Include="Expression.cs" />
     <Compile Include="FindIntersect.cs" />
     <Compile Include="FindKthElement.cs" />
     <Compile Include="FindLargestAreaRectangleUnderHistogram.cs" />
     <Compile Include="FindMaxSumNonConsecutiveSet.cs" />
     <Compile Include="Graph.cs" />
+    <Compile Include="Heap.cs" />
     <Compile Include="InOrderTraverse.cs" />
     <Compile Include="InPlaceSortLinkedList.cs" />
     <Compile Include="LinkedListUtil.cs" />
@@ -68,6 +71,7 @@
     <Compile Include="ThreeWaySum.cs" />
     <Compile Include="TopologicalSort.cs" />
     <Compile Include="TreeUtil.cs" />
+    <Compile Include="Trie.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
