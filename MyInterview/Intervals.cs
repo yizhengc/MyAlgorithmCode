@@ -110,6 +110,40 @@ namespace MyInterview
             return -1;
         }
 
+        public static int LargestOverlap(List<Tuple<int, int>> lst)
+        {
+            if (lst == null || lst.Count <= 0)
+                return 0;
+
+            int cur = 0;
+            int max = 0;
+
+            for (int i = 1; i < lst.Count; i++)
+            {
+                int overlap = 0;
+                if (lst[i].Item1 >= lst[cur].Item2)
+                {
+                    cur = i;
+                }
+                else if (lst[i].Item2 <= lst[cur].Item2)
+                {
+                    overlap = lst[i].Item2 - lst[i].Item1;
+                }
+                else
+                {
+                    overlap = lst[cur].Item2 - lst[i].Item1;
+                    cur = i;
+                }
+                
+                if (overlap > max)
+                {
+                    max = overlap;
+                }
+            }
+
+            return max;
+        }
+
         public static void UnitTest()
         {
             List<Tuple<DateTime, DateTime>> intervals = new List<Tuple<DateTime,DateTime>>();
@@ -122,6 +156,18 @@ namespace MyInterview
             Intervals interval = new Intervals();
             interval.Preprocess(intervals.ToArray());
             int userCount = interval.FindUserCount(new DateTime(2012, 3, 14, 3, 15, 0));
+
+            List<Tuple<int, int>> ranges = new List<Tuple<int, int>>();
+            ranges.Add(new Tuple<int, int>(1, 6));
+            ranges.Add(new Tuple<int, int>(3, 9));
+            ranges.Add(new Tuple<int, int>(4, 6));
+            ranges.Add(new Tuple<int, int>(5, 9));
+            ranges.Add(new Tuple<int, int>(9, 13));
+            ranges.Add(new Tuple<int, int>(11, 19));
+            ranges.Add(new Tuple<int, int>(12, 18));
+
+            int overlap = LargestOverlap(ranges);
+
         }
     }
 }
