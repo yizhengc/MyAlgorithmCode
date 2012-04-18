@@ -49,7 +49,13 @@ namespace MyInterview
 
             // ArraySubsets.UnitTes();
 
-            Expression.UnitTest();
+            // Expression.UnitTest();
+
+            // PathFinding.UnitTest();
+
+            // DutchFlagSort.UnitTest();
+
+            Intervals.UnitTest();
         }
     }
 }
