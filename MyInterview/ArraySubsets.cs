@@ -7,27 +7,33 @@ namespace MyInterview
 {
     class ArraySubsets
     {
-        static List<List<int>> FindSubset(int[] array, int k)
+        static List<List<int>> FindSubarray(Tuple<int, int>[] array, int start, int k)
         {
-            // Preprocessing to make array into distinct set.
-            if (array == null || k == 0 || array.Length == 0)
+            if (k == 0 || start >= array.Length || array.Length - start < k)
                 return null;
 
-            List<int> ary = new List<int>(array);
-            ary.Sort();
-
-            for (int i = 1; i < ary.Count; )
+            List<List<int>> ret = new List<List<int>>();
+            /*
+            for (int j = 0; j <= array[start].Item2; j++)
             {
-                if (ary[i] == ary[i - 1])
+                List<List<int>> result = FindSubarray(array, start + 1, k - j);
+
+                if (j == 0 && result == null)
+                    continue;
+                else if (result == null)
                 {
-                    ary.RemoveAt(i);
+                    result = new List<List<int>>(){new List<int>(}
                 }
-                else
-                    i++;
+
+
+                ret.AddRange(result);
             }
-
-            array = ary.ToArray();
-
+            */
+            return ret;
+        }
+        
+        static List<List<int>> FindSubset(int[] array, int k)
+        {
             if (array == null || array.Length == 0 || k == 0 || k > array.Length)
                 return null;
 
@@ -70,11 +76,64 @@ namespace MyInterview
             return set;
         }
 
+        static Tuple<int, int>[] MakeArrayCount(int[] array)
+        {
+            if (array == null || array.Length == 0)
+                return null;
+
+            int last = array[0];
+            int lastCnt = 1;
+
+            List<Tuple<int, int>> result = new List<Tuple<int, int>>();
+
+            for (int i = 1; i < array.Length; i++)
+            {
+                if (array[i] == last)
+                {
+                    lastCnt++;
+                }
+                else
+                {
+                    result.Add(new Tuple<int, int>(last, lastCnt));
+                    last = array[i];
+                    lastCnt = 1;
+                }
+            }
+
+            result.Add(new Tuple<int, int>(last, lastCnt));
+
+            return result.ToArray();
+        }
+
+        static int[] MakeUniqueArray(int[] array)
+        {
+            // Preprocessing to make array into distinct set.
+            if (array == null || array.Length == 0)
+                return null;
+
+            List<int> ary = new List<int>(array);
+            ary.Sort();
+
+            for (int i = 1; i < ary.Count; )
+            {
+                if (ary[i] == ary[i - 1])
+                {
+                    ary.RemoveAt(i);
+                }
+                else
+                    i++;
+            }
+
+            return ary.ToArray();
+        }
+
         public static void UnitTes()
         {
             int[] array = new int[] { 0, 1, 1, 3, 5, 5, 8, 9 };
 
-            List<List<int>> lst = FindSubset(array, 4);
+            List<List<int>> lst = FindSubarray(MakeArrayCount(array), 0, 4);
+
+            List<List<int>> lst2 = FindSubset(MakeUniqueArray(array), 4);
 
             foreach (var list in lst)
             {
@@ -86,6 +145,8 @@ namespace MyInterview
 
                 Console.WriteLine();
             }
+
+
         }
     }
 }

@@ -57,6 +57,7 @@
     <Compile Include="InOrderTraverse.cs" />
     <Compile Include="InPlaceSortLinkedList.cs" />
     <Compile Include="Intervals.cs" />
+    <Compile Include="LargeNumber.cs" />
     <Compile Include="LinkedListUtil.cs" />
     <Compile Include="LongestDistanceOrderedPair.cs" />
     <Compile Include="LRUCache.cs" />
@@ -69,6 +70,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Queue.cs" />
     <Compile Include="RangeBinarySearchTree.cs" />
+    <Compile Include="ReconstructBST.cs" />
+    <Compile Include="RegexMatch.cs" />
+    <Compile Include="Sqrt.cs" />
     <Compile Include="Stack.cs" />
     <Compile Include="StringMatching.cs" />
     <Compile Include="StringReduction.cs" />

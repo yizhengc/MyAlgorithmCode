@@ -10,12 +10,21 @@ namespace MyInterview
         class Boundary : IComparable
         {
             public DateTime Time;
+            public int IntervalId;
             public int OpenCount;
             public int CloseCount;
             public int UserCount;
 
             public Boundary(DateTime t, int op, int cl)
             {
+                Time = t;
+                OpenCount = op;
+                CloseCount = cl;
+            }
+
+            public Boundary(int intervalId, DateTime t, int op, int cl)
+            {
+                IntervalId = intervalId;
                 Time = t;
                 OpenCount = op;
                 CloseCount = cl;
@@ -32,6 +41,53 @@ namespace MyInterview
         }
 
         List<Boundary> boundaries;
+
+        public static Tuple<DateTime, DateTime> FindIntervalWithMostOverlap(Tuple<DateTime, DateTime>[] intervals)
+        {
+            List<Boundary> lst = new List<Boundary>();
+
+            for(int i = 0; i < intervals.Length; i++)
+            {
+                lst.Add(new Boundary(i, intervals[i].Item1, 1, 0));
+                lst.Add(new Boundary(i, intervals[i].Item2, 0, 1));
+            }
+
+            lst.Sort();
+
+            int openCount = 0;
+            int closeCount = 0;
+
+            int[] intervalOpenOffset = new int[intervals.Length];
+
+            int maxOverlap = 0;
+            int maxOverlapInterval = 0;
+
+            for (int i = 0; i < lst.Count; i++)
+            {
+                if (lst[i].OpenCount == 1)
+                {
+                    lst[i].OpenCount = openCount;
+                    lst[i].CloseCount = closeCount;
+                    openCount += 1;
+                    intervalOpenOffset[lst[i].IntervalId] = i;
+                }
+                else
+                {
+                    Boundary open = lst[intervalOpenOffset[lst[i].IntervalId]];
+                    int overlap = open.OpenCount - open.CloseCount + openCount - open.OpenCount - 1;
+
+                    if (overlap > maxOverlap)
+                    {
+                        maxOverlap = overlap;
+                        maxOverlapInterval = lst[i].IntervalId;
+                    }
+
+                    closeCount += 1;
+                }
+            }
+
+            return intervals[maxOverlapInterval];
+        }
 
         public void Preprocess(Tuple<DateTime, DateTime>[] intervals)
         {
@@ -147,11 +203,11 @@ namespace MyInterview
         public static void UnitTest()
         {
             List<Tuple<DateTime, DateTime>> intervals = new List<Tuple<DateTime,DateTime>>();
-            intervals.Add(new Tuple<DateTime, DateTime>(DateTime.Parse("2012-03-12"), DateTime.Parse("2012-03-13")));
-            intervals.Add(new Tuple<DateTime, DateTime>(DateTime.Parse("2012-03-13"), DateTime.Parse("2012-03-14")));
-            intervals.Add(new Tuple<DateTime, DateTime>(DateTime.Parse("2012-03-12"), DateTime.Parse("2012-03-17")));
-            intervals.Add(new Tuple<DateTime, DateTime>(DateTime.Parse("2012-03-15"), DateTime.Parse("2012-03-16")));
-            intervals.Add(new Tuple<DateTime, DateTime>(DateTime.Parse("2012-03-17"), DateTime.Parse("2012-03-20")));
+            intervals.Add(new Tuple<DateTime, DateTime>(DateTime.Parse("2012-03-12"), DateTime.Parse("2012-03-14")));
+            intervals.Add(new Tuple<DateTime, DateTime>(DateTime.Parse("2012-03-13"), DateTime.Parse("2012-03-18")));
+            intervals.Add(new Tuple<DateTime, DateTime>(DateTime.Parse("2012-03-15"), DateTime.Parse("2012-03-17")));
+            intervals.Add(new Tuple<DateTime, DateTime>(DateTime.Parse("2012-03-16"), DateTime.Parse("2012-03-20")));
+            intervals.Add(new Tuple<DateTime, DateTime>(DateTime.Parse("2012-03-19"), DateTime.Parse("2012-03-21")));
 
             Intervals interval = new Intervals();
             interval.Preprocess(intervals.ToArray());
@@ -167,6 +223,8 @@ namespace MyInterview
             ranges.Add(new Tuple<int, int>(12, 18));
 
             int overlap = LargestOverlap(ranges);
+
+            Tuple<DateTime, DateTime> result = FindIntervalWithMostOverlap(intervals.ToArray());
 
         }
     }

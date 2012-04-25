@@ -7,6 +7,45 @@ namespace MyInterview
 {
     class RegexMatch
     {
+        static bool Match(string word, string pattern)
+        {
+            if (word == null || pattern == null)
+                return false;
+
+            string[] tokens = pattern.Split('*');
+
+            int matchStart = 0;
+
+            for (int i = 0; i < tokens.Length; i++)
+            {
+                if (tokens[i] == "")
+                    continue;
+                else
+                {
+                    if (i == tokens.Length - 1)
+                    {
+                        int idx = word.LastIndexOf(tokens[i]);
+                        if (idx >= 0 && idx >= matchStart && idx + tokens[i].Length == word.Length)
+                            return true;
+                        else
+                            return false;
+                    }
+                    else
+                    {
+                        int idx = word.IndexOf(tokens[i], matchStart);
+                        if (idx < 0 || i == 0 && idx != 0)
+                            return false;
+                        else
+                        {
+                            matchStart = idx + tokens[i].Length;
+                        }
+                    }
+                }
+            }
+
+            return true;
+        }
+
         static bool Match(string word, int start, string regex, int rstart)
         {
             if (start == word.Length && rstart == regex.Length)
@@ -60,13 +99,13 @@ namespace MyInterview
 
         public static void UnitTest()
         {
-            string regex = "a*b?c?";
+            string regex = "a*b*bc*";
 
-            string[] str = new string[] { "", "abbc", "ac", "bc", "c", "ab", "ba" };
+            string[] str = new string[] { "", "abkbc", "abcbc", "ac", "bc", "c", "ab", "ba" };
 
             foreach (var s in str)
             {
-                Console.WriteLine("{0}:{1}", s, Match(s, 0, regex, 0));
+                Console.WriteLine("{0}:{1}", s, Match(s, regex));
             }
         }
     }

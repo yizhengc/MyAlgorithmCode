@@ -45,6 +45,7 @@ namespace MyInterview
             {
                 CacheNode node = map[key];
 
+                // If node is already the first one in the list, nothing need to be done
                 if (node != head.Next)
                 {
                     if (tail == node)
@@ -52,13 +53,16 @@ namespace MyInterview
                         tail = node.Prev;
                         tail.Next = null;
                     }
+                    else
+                    {
+                        node.Prev.Next = node.Next;
+                        node.Next.Prev = node.Prev;
+                    }
 
+                    head.Next.Prev = node;
                     node.Next = head.Next;
                     node.Prev = head;
                     head.Next = node;
-                    if (node.Next != null)
-                        node.Next.Prev = node;
-
                 }
 
                 return node;
@@ -112,13 +116,14 @@ namespace MyInterview
             cache.AddCache(1, 1);
             cache.AddCache(2, 2);
             cache.AddCache(3, 3);
-            cache.GetCache(1);
+            cache.GetCache(2);
 
             cache.ShowCache();
 
             cache.AddCache(4, 4);
             cache.AddCache(5, 5);
             cache.AddCache(6, 6);
+            cache.GetCache(4);
 
             cache.ShowCache();
         }
