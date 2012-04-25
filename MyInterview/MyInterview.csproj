@@ -61,6 +61,7 @@
     <Compile Include="LinkedListUtil.cs" />
     <Compile Include="LongestDistanceOrderedPair.cs" />
     <Compile Include="LRUCache.cs" />
+    <Compile Include="Matrix.cs" />
     <Compile Include="MaxSumSubarray.cs" />
     <Compile Include="MergeArrays.cs" />
     <Compile Include="PathFinding.cs" />
@@ -72,6 +73,7 @@
     <Compile Include="RangeBinarySearchTree.cs" />
     <Compile Include="ReconstructBST.cs" />
     <Compile Include="RegexMatch.cs" />
+    <Compile Include="ReverseOrderPair.cs" />
     <Compile Include="Sqrt.cs" />
     <Compile Include="Stack.cs" />
     <Compile Include="StringMatching.cs" />
@@ -80,6 +82,7 @@
     <Compile Include="TopologicalSort.cs" />
     <Compile Include="TreeUtil.cs" />
     <Compile Include="Trie.cs" />
+    <Compile Include="WordBreaker.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
