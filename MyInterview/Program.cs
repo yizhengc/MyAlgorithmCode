@@ -71,7 +71,17 @@ namespace MyInterview
 
             // ReverseOrderPair.UnitTest();
 
-            Matrix.UnitTest();
+            // Matrix.UnitTest();
+
+            // MergeLinkedList.UnitTest();
+
+            // LongestCommonSubsequence.UnitTest();
+
+            // BinarySearchTree<int>.UnitTest();
+
+            // MovePeople.UnitTest();
+
+            FindWordsInSquare.UnitTest();
         }
     }
 }

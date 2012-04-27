@@ -12,6 +12,7 @@ namespace MyInterview
         public bool Visited;
         public TreeNode<T> Left;
         public TreeNode<T> Right;
+        public TreeNode<T> Parent;
 
         public TreeNode(T val)
         {
@@ -33,7 +34,14 @@ namespace MyInterview
             TreeNode<T> root = new TreeNode<T>(array[mid]);
 
             root.Left = CreateTreeFromSortedArray(array, low, mid - 1);
+
+            if (root.Left != null)
+                root.Left.Parent = root;
+
             root.Right = CreateTreeFromSortedArray(array, mid + 1, high);
+
+            if (root.Right != null)
+                root.Right.Parent = root;
 
             return root;
         }

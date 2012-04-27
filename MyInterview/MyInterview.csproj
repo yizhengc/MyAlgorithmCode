@@ -44,6 +44,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ArraySubsets.cs" />
+    <Compile Include="BinarySearchTree.cs" />
     <Compile Include="BST2DLLConversion.cs" />
     <Compile Include="Dictionary.cs" />
     <Compile Include="DutchFlagSort.cs" />
@@ -52,6 +53,7 @@
     <Compile Include="FindKthElement.cs" />
     <Compile Include="FindLargestAreaRectangleUnderHistogram.cs" />
     <Compile Include="FindMaxSumNonConsecutiveSet.cs" />
+    <Compile Include="FindWordsInSquare.cs" />
     <Compile Include="Graph.cs" />
     <Compile Include="Heap.cs" />
     <Compile Include="InOrderTraverse.cs" />
@@ -59,11 +61,14 @@
     <Compile Include="Intervals.cs" />
     <Compile Include="LargeNumber.cs" />
     <Compile Include="LinkedListUtil.cs" />
+    <Compile Include="LongestCommonSubsequence.cs" />
     <Compile Include="LongestDistanceOrderedPair.cs" />
     <Compile Include="LRUCache.cs" />
     <Compile Include="Matrix.cs" />
     <Compile Include="MaxSumSubarray.cs" />
     <Compile Include="MergeArrays.cs" />
+    <Compile Include="MergeLinkedList.cs" />
+    <Compile Include="MovePeople.cs" />
     <Compile Include="PathFinding.cs" />
     <Compile Include="PermutatePhoneNumber.cs" />
     <Compile Include="PriorityQueue.cs" />
