@@ -45,7 +45,6 @@ namespace MyInterview
                     }
                 }
 
-
                 if (cumPatternSet.ContainsKey(input[e]))
                 {
 

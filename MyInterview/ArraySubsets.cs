@@ -7,31 +7,33 @@ namespace MyInterview
 {
     class ArraySubsets
     {
-        static List<List<int>> FindSubarray(Tuple<int, int>[] array, int start, int k)
+        static List<List<int>> FindSubarray(int[] array, int start, int k)
         {
             if (k == 0 || start >= array.Length || array.Length - start < k)
                 return null;
 
-            List<List<int>> ret = new List<List<int>>();
-            /*
-            for (int j = 0; j <= array[start].Item2; j++)
+            List<List<int>> results1 = FindSubarray(array, start + 1, k);
+            List<List<int>> results2 = FindSubarray(array, start + 1, k - 1);
+
+            if (results2 != null)
             {
-                List<List<int>> result = FindSubarray(array, start + 1, k - j);
-
-                if (j == 0 && result == null)
-                    continue;
-                else if (result == null)
+                foreach (var r in results2)
                 {
-                    result = new List<List<int>>(){new List<int>(}
+                    r.Add(array[start]);
                 }
-
-
-                ret.AddRange(result);
             }
-            */
-            return ret;
+            else
+                results2 = new List<List<int>>() { new List<int>() { array[start] } };
+
+            if (results1 != null)
+            {
+                results1.AddRange(results2);
+                return results1;
+            }
+            else
+                return results2;
         }
-        
+
         static List<List<int>> FindSubset(int[] array, int k)
         {
             if (array == null || array.Length == 0 || k == 0 || k > array.Length)
@@ -76,35 +78,6 @@ namespace MyInterview
             return set;
         }
 
-        static Tuple<int, int>[] MakeArrayCount(int[] array)
-        {
-            if (array == null || array.Length == 0)
-                return null;
-
-            int last = array[0];
-            int lastCnt = 1;
-
-            List<Tuple<int, int>> result = new List<Tuple<int, int>>();
-
-            for (int i = 1; i < array.Length; i++)
-            {
-                if (array[i] == last)
-                {
-                    lastCnt++;
-                }
-                else
-                {
-                    result.Add(new Tuple<int, int>(last, lastCnt));
-                    last = array[i];
-                    lastCnt = 1;
-                }
-            }
-
-            result.Add(new Tuple<int, int>(last, lastCnt));
-
-            return result.ToArray();
-        }
-
         static int[] MakeUniqueArray(int[] array)
         {
             // Preprocessing to make array into distinct set.
@@ -131,9 +104,11 @@ namespace MyInterview
         {
             int[] array = new int[] { 0, 1, 1, 3, 5, 5, 8, 9 };
 
-            List<List<int>> lst = FindSubarray(MakeArrayCount(array), 0, 4);
+            array = MakeUniqueArray(array);
 
-            List<List<int>> lst2 = FindSubset(MakeUniqueArray(array), 4);
+            List<List<int>> lst = FindSubarray(array, 0, 4);
+
+            List<List<int>> lst2 = FindSubset(array, 4);
 
             foreach (var list in lst)
             {

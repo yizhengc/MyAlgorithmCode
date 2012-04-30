@@ -42,6 +42,9 @@ namespace MyInterview
                     j++;
                 else
                 {
+                    // Depends on how distance is defined
+                    // If distance is length - 1
+                    // then j - i - 1 is the distance
                     if (j - i - 1 > max)
                     {
                         max = j - i - 1;

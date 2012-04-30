@@ -12,7 +12,7 @@ namespace MyInterview
             int result = a ^ b;
 
             shift = 0;
-            // Keypoint result > 0, otherwise a b are the same.
+            // Keypoint: check result > 0, otherwise a b are the same.
             while (result > 0 && (result & 1) == 0)
             {
                 shift++;

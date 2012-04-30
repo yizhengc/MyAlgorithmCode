@@ -7,6 +7,7 @@ namespace MyInterview
 {
     class ArrayUtility
     {
+        // Find the intersect of the two sorted arrays.
         public static List<int> FindIntersect(List<int> lst1, List<int> lst2)
         {
             List<int> result = new List<int>();

@@ -81,7 +81,11 @@ namespace MyInterview
 
             // MovePeople.UnitTest();
 
-            FindWordsInSquare.UnitTest();
+            // FindWordsInSquare.UnitTest();
+
+            // PowerSet.UnitTest();
+
+            MathOperator.UnitTest();
         }
     }
 }

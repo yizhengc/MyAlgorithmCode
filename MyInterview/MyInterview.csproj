@@ -47,6 +47,7 @@
     <Compile Include="BinarySearchTree.cs" />
     <Compile Include="BST2DLLConversion.cs" />
     <Compile Include="Dictionary.cs" />
+    <Compile Include="Divide.cs" />
     <Compile Include="DutchFlagSort.cs" />
     <Compile Include="Expression.cs" />
     <Compile Include="FindIntersect.cs" />
@@ -69,6 +70,7 @@
     <Compile Include="MergeArrays.cs" />
     <Compile Include="MergeLinkedList.cs" />
     <Compile Include="MovePeople.cs" />
+    <Compile Include="PartitionSet.cs" />
     <Compile Include="PathFinding.cs" />
     <Compile Include="PermutatePhoneNumber.cs" />
     <Compile Include="PriorityQueue.cs" />
@@ -83,6 +85,7 @@
     <Compile Include="Stack.cs" />
     <Compile Include="StringMatching.cs" />
     <Compile Include="StringReduction.cs" />
+    <Compile Include="PowerSet.cs" />
     <Compile Include="ThreeWaySum.cs" />
     <Compile Include="TopologicalSort.cs" />
     <Compile Include="TreeUtil.cs" />

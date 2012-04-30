@@ -31,6 +31,7 @@ namespace MyInterview
                     int temp = array[--end];
                     array[end] = array[i];
                     array[i] = temp;
+                    // Keypoint: Don't move i as we need to compare again as that's a new number from the end.
                 }
                 else
                     i++;

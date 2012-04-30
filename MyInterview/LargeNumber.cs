@@ -23,6 +23,7 @@ namespace MyInterview
 
                     int temp = va * vb + result[offset] + carry;
 
+                    // Keypoint: use >= instead of >
                     if (temp >= 10)
                     {
                         result[offset] = temp % 10;
@@ -35,12 +36,14 @@ namespace MyInterview
                     }
                 }
 
+                // Keypoint: Don't forget to set the carry to the most significant digit and reset the carry
                 result[offset - 1] = carry;
                 carry = 0;
             }
 
             StringBuilder sb = new StringBuilder();
 
+            // Keypoint: need this leadingZero indicator to only ignore leading zeros.
             bool leadingZero = true;
             foreach (int i in result)
             {
