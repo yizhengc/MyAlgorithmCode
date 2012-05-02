@@ -67,36 +67,26 @@ namespace MyInterview
             {
                 root = new TreeNode<char>(s[start]);
                 start += 1;
+                 
+                if (s[start] != 'L')
+                    root.Left = DeserializeTree(s, ref start);
+                else
+                {
+                    root.Left = null;
+                    // Key point here. Don't forget add 1
+                    start += 1;
+                }
+
                 if (start < s.Length)
                 {
                     if (s[start] != 'L')
-                        root.Left = DeserializeTree(s, ref start);
+                        root.Right = DeserializeTree(s, ref start);
                     else
                     {
-                        root.Left = null;
+                        root.Right = null;
                         // Key point here. Don't forget add 1
                         start += 1;
                     }
-
-                    if (start < s.Length)
-                    {
-                        if (s[start] != 'L')
-                            root.Right = DeserializeTree(s, ref start);
-                        else
-                        {
-                            root.Right = null;
-                            // Key point here. Don't forget add 1
-                            start += 1;
-                        }
-                    }
-                    else
-                    {
-                        throw new Exception();
-                    }
-                }
-                else
-                {
-                    throw new Exception();// data is corrupted
                 }
 
                 return root;

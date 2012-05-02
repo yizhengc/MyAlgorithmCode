@@ -44,6 +44,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ArraySubsets.cs" />
+    <Compile Include="BinarySearch.cs" />
     <Compile Include="BinarySearchTree.cs" />
     <Compile Include="BST2DLLConversion.cs" />
     <Compile Include="Dictionary.cs" />
@@ -52,6 +53,7 @@
     <Compile Include="Expression.cs" />
     <Compile Include="FindIntersect.cs" />
     <Compile Include="FindKthElement.cs" />
+    <Compile Include="FindKthSmallestInSortedArrays.cs" />
     <Compile Include="FindLargestAreaRectangleUnderHistogram.cs" />
     <Compile Include="FindMaxSumNonConsecutiveSet.cs" />
     <Compile Include="FindWordsInSquare.cs" />
@@ -64,6 +66,7 @@
     <Compile Include="LinkedListUtil.cs" />
     <Compile Include="LongestCommonSubsequence.cs" />
     <Compile Include="LongestDistanceOrderedPair.cs" />
+    <Compile Include="LongestIncreasingSubsequence.cs" />
     <Compile Include="LRUCache.cs" />
     <Compile Include="Matrix.cs" />
     <Compile Include="MaxSumSubarray.cs" />
@@ -81,11 +84,13 @@
     <Compile Include="ReconstructBST.cs" />
     <Compile Include="RegexMatch.cs" />
     <Compile Include="ReverseOrderPair.cs" />
+    <Compile Include="SortWithStack.cs" />
     <Compile Include="Sqrt.cs" />
     <Compile Include="Stack.cs" />
     <Compile Include="StringMatching.cs" />
     <Compile Include="StringReduction.cs" />
     <Compile Include="PowerSet.cs" />
+    <Compile Include="SubstringWithWordConcatenation.cs" />
     <Compile Include="ThreeWaySum.cs" />
     <Compile Include="TopologicalSort.cs" />
     <Compile Include="TreeUtil.cs" />

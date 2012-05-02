@@ -17,7 +17,7 @@ namespace MyInterview
 
             //ThreeWaySum.UnitTest();
 
-            //FindMaxSumNonConsecutiveSet.UnitTest();
+            // FindMaxSumNonConsecutiveSet.UnitTest();
 
             // InOrderTraverse.UnitTest();
 
@@ -85,7 +85,11 @@ namespace MyInterview
 
             // PowerSet.UnitTest();
 
-            MathOperator.UnitTest();
+            // MathOperator.UnitTest();
+
+            // FindKthSmallestInSortedArrays.UnitTest();
+
+            LongestIncreasingSubsequence.UnitTest();
         }
     }
 }

@@ -7,6 +7,12 @@ namespace MyInterview
 {
     class RegexMatch
     {
+        /// <summary>
+        /// Match patterns like F*b*k where * represents 0 or multiple characters.
+        /// </summary>
+        /// <param name="word"></param>
+        /// <param name="pattern"></param>
+        /// <returns></returns>
         static bool Match(string word, string pattern)
         {
             if (word == null || pattern == null)

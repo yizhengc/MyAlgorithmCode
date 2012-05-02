@@ -7,6 +7,26 @@ namespace MyInterview
 {
     class FindMaxSumNonConsecutiveSet
     {
+        static int MaxSumNonConsecutiveSequence(int[] array)
+        {
+            int[] cum = new int[array.Length];
+
+            cum[0] = array[0];
+            cum[1] = Math.Max(array[1], array[0]);
+
+            int maxSum = cum[1];
+
+            for (int i = 2; i < cum.Length; i++)
+            {
+                cum[i] = Math.Max(cum[i - 1], cum[i - 2] + array[i]);
+
+                if (maxSum < cum[i])
+                    maxSum = cum[i];
+            }
+
+            return maxSum;
+        }
+
         static List<int> MaxSumNonConsecutiveSequence(List<int> array)
         {
             if (array == null || array.Count == 0)
@@ -76,6 +96,8 @@ namespace MyInterview
             }
 
             Console.Write("\n");
+
+            int sum = MaxSumNonConsecutiveSequence(array.ToArray());
         }
     }
 }

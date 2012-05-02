@@ -7,6 +7,7 @@ namespace MyInterview
 {
     class SubstringWithWordConcatenation
     {
+        /*
         static int Find(string input, List<string> patterns)
         {
             if (string.IsNullOrEmpty(input) || patterns == null || patterns.Count == 0)
@@ -99,7 +100,7 @@ namespace MyInterview
 
 
         }
-
+        */
         public static void UnitTest()
         {
 

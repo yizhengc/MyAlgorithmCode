@@ -7,7 +7,7 @@ namespace MyInterview
 {
     class BinarySearch
     {
-        int SearchInRotatedArray(int[] array, int target, int l, int h)
+        public static int SearchInRotatedArray(int[] array, int target, int l, int h)
         {
             while (l <= h)
             {
@@ -36,6 +36,8 @@ namespace MyInterview
 
             return -1;
         }
+
+
 
     }
 }
