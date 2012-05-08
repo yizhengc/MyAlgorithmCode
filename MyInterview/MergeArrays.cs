@@ -7,6 +7,7 @@ namespace MyInterview
 {
     class MergeArrays
     {
+        // Merge array A into B when A has size N B has size 2N. Both sorted
         static void MergeTwoArrays(int[] array1, int elementCnt, int[] array2)
         {
             if (array1.Length < elementCnt + array2.Length)

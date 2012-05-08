@@ -9,6 +9,7 @@ namespace MyInterview
     {
         static Node<int> MergeSort(Node<int> lst1, Node<int> lst2)
         {
+            // Create a dummy node header
             Node<int> head = new Node<int>();
 
             if (lst1 == null)

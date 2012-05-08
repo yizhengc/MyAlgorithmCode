@@ -133,6 +133,9 @@ namespace MyInterview
 
         static TreeNode<T> Predecessor(TreeNode<T> node)
         {
+            if (node == null)
+                return null;
+
             if (node.Left != null)
             {
                 node = node.Left;
@@ -142,13 +145,11 @@ namespace MyInterview
 
                 return node;
             }
-            else
-            {
-                while (node.Parent != null && node.Parent.Left == node)
-                    node = node.Parent;
+            
+            while (node.Parent != null && node.Parent.Left == node)
+                node = node.Parent;
 
-                return node.Parent;
-            }
+            return node.Parent;
         }
 
         static TreeNode<T> Delete(TreeNode<T> root, TreeNode<T> target)

@@ -89,7 +89,9 @@ namespace MyInterview
 
             // FindKthSmallestInSortedArrays.UnitTest();
 
-            LongestIncreasingSubsequence.UnitTest();
+            // LongestIncreasingSubsequence.UnitTest();
+
+            BubbleSort.UnitTest();
         }
     }
 }

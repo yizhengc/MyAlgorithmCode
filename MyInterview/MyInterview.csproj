@@ -47,6 +47,7 @@
     <Compile Include="BinarySearch.cs" />
     <Compile Include="BinarySearchTree.cs" />
     <Compile Include="BST2DLLConversion.cs" />
+    <Compile Include="BubbleSort.cs" />
     <Compile Include="Dictionary.cs" />
     <Compile Include="Divide.cs" />
     <Compile Include="DutchFlagSort.cs" />
@@ -72,6 +73,7 @@
     <Compile Include="MaxSumSubarray.cs" />
     <Compile Include="MergeArrays.cs" />
     <Compile Include="MergeLinkedList.cs" />
+    <Compile Include="MinCostToConvertToSortedArray.cs" />
     <Compile Include="MovePeople.cs" />
     <Compile Include="PartitionSet.cs" />
     <Compile Include="PathFinding.cs" />
