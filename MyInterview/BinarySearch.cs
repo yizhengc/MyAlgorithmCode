@@ -7,6 +7,8 @@ namespace MyInterview
 {
     class BinarySearch
     {
+        // Keypoint: find the range that is always ordered increasing. If the target is not
+        // in that range, it must be in the other range. 
         public static int SearchInRotatedArray(int[] array, int target, int l, int h)
         {
             while (l <= h)
@@ -36,8 +38,5 @@ namespace MyInterview
 
             return -1;
         }
-
-
-
     }
 }

@@ -69,13 +69,10 @@ namespace MyInterview
                 if (!cur.Contains(word[i]))
                     return false;
 
-                if (i == word.Length - 1 && cur.GetChild(word[i]).IsEnd)
-                    return true;
-
                 cur = cur.GetChild(word[i]);
             }
 
-            return false;
+            return cur.IsEnd;
         }
 
         public static void UnitTest()

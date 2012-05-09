@@ -45,7 +45,7 @@ namespace MyInterview
 
             // LongestDistanceOrderedPair.UnitTest();
 
-            // Trie.UnitTest();
+            Trie.UnitTest();
 
             // ArraySubsets.UnitTes();
 
@@ -91,7 +91,7 @@ namespace MyInterview
 
             // LongestIncreasingSubsequence.UnitTest();
 
-            BubbleSort.UnitTest();
+            // BubbleSort.UnitTest();
         }
     }
 }
