@@ -16,6 +16,8 @@ namespace MyInterview
         {
             int len = array.Length;
 
+            // Make the length of the aux array to be len + 1
+            // It will make the rest of the code easier.
             int[] aux = new int[len + 1];
 
             left = right = 0;

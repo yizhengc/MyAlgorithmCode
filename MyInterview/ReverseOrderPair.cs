@@ -29,9 +29,7 @@ namespace MyInterview
                     buf[k++] = array[j++];
                 }
                 else
-                {
                     buf[k++] = array[i++];
-                }
             }
 
             while (i <= m)

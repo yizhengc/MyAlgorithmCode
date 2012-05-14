@@ -38,6 +38,9 @@ namespace MyInterview
             {
                 int i = (l + r) / 2;
 
+                // Keypoint: k - 1 numbers should be smaller than A[i]. 
+                // For index i, there are already i numbers smaller than index i;
+                // For index j - 1, there are j numbers, so we should minus extra 1.
                 int j = k - i - 2;
 
                 if (j > B.Length - 1 || j >= 0 && A[i] < B[j])

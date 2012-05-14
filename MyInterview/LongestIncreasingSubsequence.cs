@@ -10,6 +10,8 @@ namespace MyInterview
         static int[] LIS(int[] input)
         {
             List<int> maxLength = new List<int>();
+            // Keypoint: The parents array is for back tracking the increasing sequence
+            // It should be the same size as the input
             int[] parents = new int[input.Length];
 
             for (int i = 0; i < input.Length; i++)

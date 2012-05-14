@@ -7,6 +7,43 @@ namespace MyInterview
 {
     class ReconstructBST
     {
+        static TreeNode<int> ReconstructFromPreOrder(int[] preOrder, int start, ref int end, int parent)
+        {
+            TreeNode<int> root = null;
+            if (start == end)
+                root = new TreeNode<int>(preOrder[start]);
+            else if (start < end)
+            {
+                root = new TreeNode<int>(preOrder[start]);
+
+                if (preOrder[start + 1] > preOrder[start])
+                {
+                    root.Left = null;
+                    if (preOrder[start + 1] < parent)
+                    {
+                        root.Right = ReconstructFromPreOrder(preOrder, start + 1, ref end, parent);
+                    }
+                    else
+                    {
+                        root.Right = null;
+                        end = start;
+                    }
+
+                    return root;
+                }
+                else
+                {
+                    int originalEnd = end;
+                    root.Left = ReconstructFromPreOrder(preOrder, start + 1, ref end, preOrder[start]);
+                    int newStart = end + 1;
+                    end = originalEnd;
+                    root.Right = ReconstructFromPreOrder(preOrder, newStart, ref end, parent);
+                }
+            }
+
+            return root;
+        }
+
         static TreeNode<int> Reconstruct(int[] inOrder, int s1, int e1, int[] preOrder, int s2, int e2)
         {
             if (e1 - s1 != e2 - s2)
@@ -46,6 +83,9 @@ namespace MyInterview
             int[] preOrder = new int[] { 4, 1, 2, 3, 5, 6};
 
             TreeNode<int> root = Reconstruct(inOrder, 0, 5, preOrder, 0, 5);
+
+            int end = 5;
+            root = ReconstructFromPreOrder(preOrder, 0, ref end, int.MaxValue);
         }
     }
 }

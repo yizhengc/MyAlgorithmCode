@@ -45,7 +45,7 @@ namespace MyInterview
 
             // LongestDistanceOrderedPair.UnitTest();
 
-            Trie.UnitTest();
+            // Trie.UnitTest();
 
             // ArraySubsets.UnitTes();
 
@@ -65,7 +65,7 @@ namespace MyInterview
 
             // Sqrt.UnitTest();
 
-            // ReconstructBST.UnitTest();
+            ReconstructBST.UnitTest();
 
             // WordBreaker.UnitTest();
 
