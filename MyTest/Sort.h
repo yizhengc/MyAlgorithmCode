@@ -78,7 +78,7 @@ namespace Util
 			}
 		}
 
-		static void QuickSort(T elements[], int low, int high)
+		static void QuickSort(T elements[], int low, int high, int (*Comparer)(T&,T&))
 		{
 			if (low < high)
 			{
@@ -90,7 +90,7 @@ namespace Util
 				int i;
 				for (i = low; i < high - 1; i++) 
 				{
-					if (elements[i] < elements[high - 1])
+					if ((*Comparer)(elements[i], elements[high - 1]) < 0)
 					{
 						Swap(elements[i], elements[q++]);
 					}

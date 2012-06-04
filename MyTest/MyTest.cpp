@@ -11,13 +11,32 @@
 #include "Interval.h";
 #include "PyramidCup.h";
 #include "MergeBST.h";
+#include "WordBreaker.h";
+#include "VersionedStack.h";
+#include "LargeNumber.h";
+#include "BinarySearch.h";
+#include "MaximumSubArray.h";
+#include "MaxRectangularAreaUnderHistogram.h";
+#include "MatrixOperations.h";
 //using namespace Util;
 using namespace std;
 
-
-
 int _tmain(int argc, _TCHAR* argv[])
 {
+	TestRotateMatrix();
+
+	TestMaxRectangularAreaUnderHistogram();
+
+	TestMaxSubarray();
+
+	TestBinarySearch();
+
+	TestLargeNumberFunctions();
+
+	TestVersionedStack();
+
+	TestWordBreaker();
+
 	TestMergeTwoIntervalLists();
 
 	TestMergeInterval();

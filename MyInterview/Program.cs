@@ -65,7 +65,7 @@ namespace MyInterview
 
             // Sqrt.UnitTest();
 
-            ReconstructBST.UnitTest();
+            // ReconstructBST.UnitTest();
 
             // WordBreaker.UnitTest();
 
@@ -92,6 +92,8 @@ namespace MyInterview
             // LongestIncreasingSubsequence.UnitTest();
 
             // BubbleSort.UnitTest();
+
+            MinCostToConvertToSortedArray.UnitTest();
         }
     }
 }

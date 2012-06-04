@@ -1,3 +1,6 @@
+#ifndef __STACK_H__
+#define __STACK_H__
+
 template <typename T>
 class Stack
 {
@@ -44,3 +47,5 @@ public:
 		return _top == -1;
 	}
 };
+
+#endif

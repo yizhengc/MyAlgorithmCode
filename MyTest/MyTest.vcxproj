@@ -75,6 +75,13 @@
     <None Include="ReadMe.txt" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="BinarySearch.h" />
+    <ClInclude Include="LargeNumber.h" />
+    <ClInclude Include="MatrixOperations.h" />
+    <ClInclude Include="MaximumSubArray.h" />
+    <ClInclude Include="MaxRectangularAreaUnderHistogram.h" />
+    <ClInclude Include="VersionedStack.h" />
+    <ClInclude Include="WordBreaker.h" />
     <ClInclude Include="CumulativeCount.h" />
     <ClInclude Include="Graph.h" />
     <ClInclude Include="IndexedBST.h" />
